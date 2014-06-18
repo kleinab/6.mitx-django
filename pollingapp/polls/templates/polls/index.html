@@ -2,10 +2,11 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
+<h1>Polls</h1>
 {% if latest_poll_list %}
     <ul>
     {% for poll in latest_poll_list %}
-        <li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a></li>
+        <li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }} - {{ poll.pub_date|date:"SHORT_DATE_FORMAT" }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

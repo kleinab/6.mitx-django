@@ -1,4 +1,4 @@
-<h1>{{ poll.question }}</h1>
+<h1>{{ poll.question }} - {{ poll.pub_date|date:"SHORT_DATE_FORMAT" }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -10,3 +10,4 @@
 {% endfor %}
 <input type="submit" value="Vote" />
 </form>
+<a href="{% url 'polls:index' %}">Home</a>
