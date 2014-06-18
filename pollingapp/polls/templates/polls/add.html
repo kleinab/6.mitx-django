@@ -1,0 +1,12 @@
+<h1>New Poll</h1>
+
+<form action="{% url 'polls:add' %}" method="post">
+{% csrf_token %}
+	Question: <input type="text" name="question" /><br />
+	Author:   <input type="text" name="author" /><br />
+	Choice 1: <input type="text" name="choice1" /><br />
+	Choice 2: <input type="text" name="choice2" /><br />
+	Choice 3: <input type="text" name="choice3" /><br />
+<input type="submit" value="Add Poll" />
+</form>
+<a href="{% url 'polls:index' %}">Home</a>
